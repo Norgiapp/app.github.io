@@ -8,10 +8,15 @@ html, body {
     height: 100%;
     margin: 0;
     padding: 0;
-    overflow: hidden; /* Oculta cualquier contenido desbordado */
+    overflow: hidden; /* Evita el desplazamiento en la pantalla completa */
     font-family: Arial, sans-serif;
     background-color: #000;
     color: #fff;
+}
+
+/* Para asegurar que todas las secciones llenen el espacio de la pantalla */
+.section {
+    min-height: calc(100vh - 70px); /* Ajusta si es necesario, teniendo en cuenta la barra de navegación */
 }
 
 /* Ocultar el aviso en dispositivos móviles y mostrarlo solo en pantallas grandes */
