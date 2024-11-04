@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interfaz de Tareas y Recompensas</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Contenido principal de la página (Inicio) -->
+  <div id="inicio-section" class="section">
+    <div class="ad">
+        <div class="ad-section">
+          <p>Ads Patrocinado</p>
+        </div>
+      
+        <div class="balance-section">
+          <div class="balance-info">
+            <span class="icon">🏀</span>
+            <h2>1 000</h2>
+            <p>Coins</p>
+          </div>
+          <button class="withdraw-button" onclick="showSection('billetera-section', this)">Retirar a tu Billetera</button>
+        </div>
+
+        <div class="invite-section">
+          <h3>Invita a tus amigos</h3>
+          <p>Comparte tu enlace y gana.</p>
+          <button class="share-button">Compartir</button>
+        </div>
+
+        <div class="tasks-section">
+          <p>Completa Tareas & Gana</p>
+          <div class="task">
+            <span class="task-icon">📢</span>
+            <p>¡Sígue nuestro canal!<br><span>+1 Coin</span></p>
+            <button class="task-button">Seguir</button>
+          </div>
+          <div class="task">
+            <span class="task-icon">📢</span>
+            <p>¡Síguenos en Instagram!<br><span>+1 Coin</span></p>
+            <button class="task-button">Seguir</button>
+          </div>
+          <div class="task">
+            <span class="task-icon">📢</span>
+            <p>¡Sígue nuestro canal!<br><span>+1 Coin</span></p>
+            <button class="task-button">Seguir</button>
+          </div>
+          <div class="task">
+            <span class="task-icon">📢</span>
+            <p>¡Sígue nuestro canal!<br><span>+1 Coin</span></p>
+            <button class="task-button">Seguir</button>
+          </div>
+        </div>
+    </div>
+  </div>
+
+  <!-- Mensaje de advertencia para dispositivos de escritorio -->
+  <div id="desktop-warning">
+      <h1>Esta página solo está disponible en dispositivos móviles</h1>
+      <p>Por favor, visita esta página desde tu teléfono móvil.</p>
+  </div>
+
+  <!-- Sección de Tareas -->
+  <div id="tareas-section" class="section" style="display: none;">
+    <h1>Tareas</h1>
+    <p>Aquí puedes completar tareas para ganar recompensas adicionales.</p>
+    
+    <div class="task">
+        <span class="task-icon">📢</span>
+        <p>Completa una encuesta<br><span>+5 Coins</span></p>
+        <button class="task-button">Completar</button>
+    </div>
+
+    <div class="task">
+        <span class="task-icon">📢</span>
+        <p>Comparte en redes sociales<br><span>+3 Coins</span></p>
+        <button class="task-button">Compartir</button>
+    </div>
+  </div>
+
+  <!-- Sección de Amigos -->
+  <div id="amigos-section" class="section" style="display: none;">
+    <h1>Amigos</h1>
+    <p>Comparte con tus amigos y gana recompensas juntos.</p>
+    <div class="invite-section">
+        <h3>Invita a tus amigos</h3>
+        <p>Obtén recompensas cuando tus amigos se unan usando tu enlace.</p>
+        <button class="share-button">Compartir enlace</button>
+    </div>
+  </div>
+
+  <!-- Sección de Billetera -->
+  <div id="billetera-section" class="section" style="display: none;">
+    <h1>Billetera</h1>
+    <p>Aquí puedes ver y retirar tus ganancias acumuladas.</p>
+    <div class="balance-section">
+        <h2>Saldo Actual</h2>
+        <p>1,000 Coins</p>
+        <button class="withdraw-button">Retirar</button>
+    </div>
+  </div>
+
+  <!-- Barra de Navegación -->
+  <footer class="navbar">
+    <div class="navbar-item active" onclick="showSection('inicio-section', this)">
+      <span class="icon">😊</span>
+      <p>Inicio</p>
+    </div>
+    <div class="navbar-item" onclick="showSection('tareas-section', this)">
+      <span class="icon">📄</span>
+      <p>Tareas</p>
+    </div>
+    <div class="navbar-item" onclick="showSection('amigos-section', this)">
+      <span class="icon">👥</span>
+      <p>Amigos</p>
+    </div>
+    <div class="navbar-item" onclick="showSection('billetera-section', this)">
+      <span class="icon">💼</span>
+      <p>Billetera</p>
+    </div>
+  </footer>
+
+  <!-- Enlace a archivo JavaScript externo -->
+  <script src="script.js"></script>
+</body>
+</html>
