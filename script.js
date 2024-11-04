@@ -1,3 +1,10 @@
+// Inicializar y expandir la mini app en Telegram
+document.addEventListener('DOMContentLoaded', function() {
+    if (typeof Telegram !== 'undefined' && Telegram.WebApp) {
+        Telegram.WebApp.ready();
+        Telegram.WebApp.expand();
+    }
+});
 // Detectar dispositivo y ajustar la visibilidad del contenido
 window.addEventListener('load', function () {  
     if (window.matchMedia("(min-width: 768px)").matches || !/Android|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i.test(navigator.userAgent)) {
