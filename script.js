@@ -1,29 +1,30 @@
-// Inicializar y expandir la mini app en Telegram
+// Asegurarse de que el DOM esté completamente cargado
 document.addEventListener('DOMContentLoaded', function() {
     // Verificar si la API de Telegram está disponible
     if (typeof Telegram !== 'undefined' && Telegram.WebApp) {
+        // Indicar que la aplicación está lista
         Telegram.WebApp.ready();
-        Telegram.WebApp.expand(); // Expande la app a pantalla completa
-        
-        // Cambiar la franja superior a negro y el texto a blanco
-        Telegram.WebApp.setHeaderColor('bg_color'); // Establece el color de fondo de la barra superior
-        Telegram.WebApp.setHeaderColor('#000000'); // Negro como fondo de la barra superior
-        Telegram.WebApp.setHeaderTextColor('white'); // Texto de la barra superior en blanco
+        // Expandir la aplicación a pantalla completa
+        Telegram.WebApp.expand();
+        // Establecer el color de fondo de la barra superior
+        Telegram.WebApp.setHeaderColor('#000000'); // Negro
+    } else {
+        console.error('La API de Telegram WebApp no está disponible.');
     }
 
-    // Renderizar las tareas para que aparezcan en Inicio y en Tareas
+    // Renderizar las tareas en las secciones correspondientes
     renderTareas();
 });
 
 // Detectar dispositivo y ajustar la visibilidad del contenido
-window.addEventListener('load', function () {  
+window.addEventListener('load', function () {
     if (window.matchMedia("(min-width: 768px)").matches || !/Android|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i.test(navigator.userAgent)) {
-        // Oculta el contenido principal y la barra de navegación en pantallas grandes o dispositivos no móviles
+        // Ocultar contenido principal y barra de navegación en pantallas grandes o dispositivos no móviles
         document.getElementById("inicio-section").style.display = "none";
         document.querySelector(".navbar").style.display = "none";
         document.getElementById("desktop-warning").style.display = "block";
     } else {
-        // Muestra el contenido principal y la barra de navegación en dispositivos móviles
+        // Mostrar contenido principal y barra de navegación en dispositivos móviles
         document.getElementById("inicio-section").style.display = "block";
         document.querySelector(".navbar").style.display = "flex";
         document.getElementById("desktop-warning").style.display = "none";
@@ -61,11 +62,11 @@ function showSection(sectionId, element = null) {
 
 // Array con todas las tareas
 const tareas = [
-    { icon: "📢", text: "¡Sígue nuestro canal!", reward: "+1 Coin" },
-    { icon: "📢", text: "¡Síguenos en Instagram!", reward: "+1 Coin" },
-    { icon: "📢", text: "¡Comparte en Twitter!", reward: "+1 Coin" },
-    { icon: "📢", text: "¡Invita a un amigo!", reward: "+2 Coins" },
-    { icon: "📢", text: "¡Completa una encuesta!", reward: "+3 Coins" },
+    { icon: "📢", text: "¡Sígue nuestro canal!", reward: "+1 Moneda" },
+    { icon: "📢", text: "¡Síguenos en Instagram!", reward: "+1 Moneda" },
+    { icon: "📢", text: "¡Comparte en Twitter!", reward: "+1 Moneda" },
+    { icon: "📢", text: "¡Invita a un amigo!", reward: "+2 Monedas" },
+    { icon: "📢", text: "¡Completa una encuesta!", reward: "+3 Monedas" },
     // Añade más tareas aquí según sea necesario
 ];
 
