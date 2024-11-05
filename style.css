@@ -1,3 +1,35 @@
+/* Variables Globales */
+:root {
+    --background-color: #000;
+    --text-color: #fff;
+    --primary-color: #3654FE;
+    --secondary-color: #28a745;
+    --task-button-color: #061840;
+    --ad-bg-color: #ff4d4d;
+    --balance-bg-color: #ff6666;
+    --tasks-bg-color: #ff8080;
+    --navbar-bg-color: #0a88ff;
+    --active-color: red;
+    --hover-color: #ccc;
+    
+    /* Dimensiones y Espaciado */
+    --padding: 20px;
+    --border-radius: 8px;
+    --section-width: 90%;
+    --icon-font-size: 40px;
+    --balance-font-size: 36px;
+    --navbar-padding: 15px;
+    --margin-bottom-task: 10px;
+    --button-padding: 10px 20px;
+    --button-radius: 8px;
+    --task-button-padding: 5px 15px;
+    --navbar-font-size: 14px;
+    --navbar-icon-size: 24px;
+    --navbar-icon-margin-top: -5px;
+    --navbar-icon-margin-bottom: 2px;
+}
+
+/* Configuración Global */
 * { 
     margin: 0;
     padding: 0;
@@ -8,177 +40,151 @@ html, body {
     height: 100%;
     margin: 0;
     padding: 0;
-    overflow: hidden; /* Evita el desplazamiento en la pantalla completa */
     font-family: Arial, sans-serif;
-    background-color: #000;
-    color: #fff;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    overflow: hidden; /* Oculta el scroll global */
 }
 
-/* Para asegurar que todas las secciones llenen el espacio de la pantalla */
-.section {
-    min-height: calc(100vh - 70px); /* Ajusta si es necesario, teniendo en cuenta la barra de navegación */
-}
-
-/* Ocultar el aviso en dispositivos móviles y mostrarlo solo en pantallas grandes */
-#desktop-warning {
-    display: none;
+/* Sección de Anuncios (Fija) */
+.ad-section {
+    background-color: var(--ad-bg-color);
+    padding: var(--padding);
     text-align: center;
-    padding: 20px;
-    background-color: #222;
-    color: #fff;
+    border-radius: var(--border-radius);
+    width: var(--section-width);
+    margin: 10px auto;
+    box-sizing: border-box;
 }
 
-/* Mostrar el aviso en pantallas grandes */
-@media (min-width: 768px) {
-    #inicio-section {
-        display: none;
-    }
-    #desktop-warning {
-        display: block;
-    }
+/* Contenido Desplazable */
+.scrollable-content {
+    height: calc(100vh - 150px); /* Ajusta altura para incluir la barra de navegación y el anuncio */
+    overflow-y: auto;
+    padding-top: 10px;
 }
 
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-}
-
-.ad-section, .balance-section, .invite-section, .tasks-section {
-    background-color: #222;
-    padding: 20px;
+/* Sección de Balance */
+.balance-section {
+    background-color: var(--balance-bg-color);
+    padding: var(--padding);
     text-align: center;
-    border-radius: 8px;
-    width: 90%; /* Ajusta el ancho al 90% para que quede centrado */
+    border-radius: var(--border-radius);
+    width: var(--section-width);
     margin: 10px auto;
     box-sizing: border-box;
 }
 
 .balance-info .icon {
-    font-size: 40px;
+    font-size: var(--icon-font-size);
 }
 
 .balance-info h2 {
-    font-size: 36px;
+    font-size: var(--balance-font-size);
     margin: 5px 0;
 }
 
-/* Botón de Retiro */
-.withdraw-button {
-    background-color: #3654FE;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    margin-top: 5px;
-}
-
-/* Botón de Compartir */
-.share-button {
-    background-color: #28a745;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    margin-top: 5px;
-}
-
-/* Botón de Tareas */
-.task-button {
-    background-color: #061840;
-    color: #fff;
-    padding: 5px 15px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    margin-top: 5px;
-}
-
+/* Sección de Tareas */
 .tasks-section {
-    background-color: #000000; /* Cambia este valor al color que prefieras */
-    padding: 10px 0;
+    background-color: var(--tasks-bg-color);
+    padding: 15px 0;
     text-align: left;
+    border-radius: var(--border-radius);
+    width: var(--section-width);
+    margin: 10px auto;
+    box-sizing: border-box;
 }
 
+/* Botones */
+.withdraw-button {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    padding: var(--button-padding);
+    border: none;
+    border-radius: var(--button-radius);
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+.share-button {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    padding: var(--button-padding);
+    border: none;
+    border-radius: var(--button-radius);
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+.task-button {
+    background-color: var(--task-button-color);
+    color: var(--text-color);
+    padding: var(--task-button-padding);
+    border: none;
+    border-radius: var(--button-radius);
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+/* Estilos de Tareas */
 .tasks-section p {
-    margin-bottom: 10px;
+    margin-bottom: var(--margin-bottom-task);
 }
 
 .task {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #000000;
+    background-color: var(--background-color);
     padding: 10px;
-    border-radius: 8px;
+    border-radius: var(--border-radius);
     width: 100%;
-    margin: 0; /* Elimina el margen en todos los lados */
-    margin-bottom: 10px; /* Solo aplica margen inferior entre las tarjetas */
+    margin: 0;
+    margin-bottom: var(--margin-bottom-task);
     box-sizing: border-box;
 }
 
 .task:last-child {
-    margin-bottom: 0; /* Elimina el margen inferior de la última tarjeta */
+    margin-bottom: 0;
 }
 
-.task p {
-    flex-grow: 1;
-    margin-left: 10px;
-    text-align: left;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding-top: 10px;
-}
-
-#inicio-section {
-    margin-bottom: 80px; /* Ajusta el espacio inferior si es necesario */
-}
-
+/* Barra de Navegación */
 .navbar {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: #000;
-    padding: 10px 0;
+    background-color: var(--navbar-bg-color);
+    padding: var(--navbar-padding) 0;
     position: fixed;
     bottom: 0;
+    left: 0;
+    right: 0;
     width: 100%;
-    border-top: 1px solid #333;
+    height: 80px; /* Ajusta la altura según tus necesidades */
 }
+
 
 .navbar-item {
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-size: 14px;
-    color: #fff;
+    font-size: var(--navbar-font-size);
+    color: var(--text-color);
     cursor: pointer;
     transition: color 0.3s;
 }
 
 .navbar-item .icon {
-    font-size: 24px;
-    margin-bottom: 5px;
+    font-size: var(--navbar-icon-size);
+    margin-bottom: var(--navbar-icon-margin-bottom);
+    margin-top: -25px; /* Ajusta el margen superior para subir los iconos */
 }
 
+
 .navbar-item.active {
-    color: red;
+    color: var(--active-color);
 }
 
 .navbar-item:hover {
-    color: #ccc;
-}
-
-.section {
-    padding: 0px; /* Sin padding adicional */
-    text-align: center;
-    font-size: 18px;
-    color: #fff;
-    min-height: calc(100vh - 70px); /* Ajusta este valor según la altura de la barra de navegación */
-    margin-top: 0;
-    box-sizing: border-box;
+    color: var(--hover-color);
 }
