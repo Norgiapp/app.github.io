@@ -26,36 +26,19 @@
           <button class="withdraw-button" onclick="showSection('billetera-section', this)">Retirar a tu Billetera</button>
       </div>
 
-      <!-- Sección de Tareas -->
+      <!-- Sección de Tareas en Inicio (Limitada a 5) -->
       <div class="tasks-section">
           <p>Completa Tareas & Gana</p>
-          <div class="task">
-            <span class="task-icon">📢</span>
-            <p>¡Sígue nuestro canal!<br><span>+1 Coin</span></p>
-            <button class="task-button">Seguir</button>
-          </div>
-          <div class="task">
-            <span class="task-icon">📢</span>
-            <p>¡Síguenos en Instagram!<br><span>+1 Coin</span></p>
-            <button class="task-button">Seguir</button>
-          </div>
-          <div class="task">
-            <span class="task-icon">📢</span>
-            <p>¡Sígue nuestro canal!<br><span>+1 Coin</span></p>
-            <button class="task-button">Seguir</button>
-          </div>
-          <div class="task">
-            <span class="task-icon">📢</span>
-            <p>¡Síguenos en Instagram!<br><span>+1 Coin</span></p>
-            <button class="task-button">Seguir</button>
-          </div>
-          <div class="task">
-            <span class="task-icon">📢</span>
-            <p>¡Sígue nuestro canal!<br><span>+1 Coin</span></p>
-            <button class="task-button">Seguir</button>
-          </div>
+          <div id="inicio-tasks-list"></div> <!-- Contenedor para 5 tareas -->
       </div>
     </div>
+  </div>
+
+  <!-- Sección completa de Tareas -->
+  <div id="tareas-section" class="section" style="display: none;">
+    <h1>Tareas</h1>
+    <p>Completa todas las tareas y gana más recompensas.</p>
+    <div id="tareas-list"></div> <!-- Contenedor para todas las tareas -->
   </div>
 
   <!-- Mensaje de advertencia para dispositivos de escritorio -->
@@ -92,7 +75,7 @@
       <span class="icon">😊</span>
       <p>Inicio</p>
     </div>
-    <div class="navbar-item" onclick="showSection('inicio-section', this)">
+    <div class="navbar-item" onclick="showSection('tareas-section', this)">
       <span class="icon">📄</span>
       <p>Tareas</p>
     </div>
