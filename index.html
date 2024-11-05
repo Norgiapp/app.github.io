@@ -5,57 +5,56 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Interfaz de Tareas y Recompensas</title>
   <link rel="stylesheet" href="style.css">
-  <script src="https://telegram.org/js/telegram-web-app.js"></script> <!-- SDK de Telegram -->
 </head>
 <body>
-<!-- Contenido principal de la página (Inicio) -->
+  <!-- Contenido principal de la página (Inicio) -->
   <div id="inicio-section" class="section">
-    <div class="ad">
-        <div class="ad-section">
-          <p>Ads Patrocinado</p>
-        </div>
+    <!-- Sección de Anuncios (Fija) -->
+    <div class="ad-section">
+        <p>Ads Patrocinado</p>
+    </div>
 
-        <!-- Sección con desplazamiento -->
-        <div class="scrollable-section">
-            <div class="balance-section">
-              <div class="balance-info">
-                <span class="icon">🏀</span>
-                <h2>1 000</h2>
-                <p>Coins</p>
-              </div>
-              <button class="withdraw-button" onclick="showSection('billetera-section', this)">Retirar a tu Billetera</button>
-            </div>
+    <!-- Contenedor Desplazable para el resto del contenido -->
+    <div class="scrollable-content">
+      <!-- Sección de Balance -->
+      <div class="balance-section">
+          <div class="balance-info">
+            <span class="icon">🏀</span>
+            <h2>1 000</h2>
+            <p>Coins</p>
+          </div>
+          <button class="withdraw-button" onclick="showSection('billetera-section', this)">Retirar a tu Billetera</button>
+      </div>
 
-            <div class="invite-section">
-              <h3>Invita a tus amigos</h3>
-              <p>Comparte tu enlace y gana.</p>
-              <button class="share-button">Compartir</button>
-            </div>
-
-            <div class="tasks-section">
-              <p>Completa Tareas & Gana</p>
-              <div class="task">
-                <span class="task-icon">📢</span>
-                <p>¡Sígue nuestro canal!<br><span>+1 Coin</span></p>
-                <button class="task-button">Seguir</button>
-              </div>
-              <div class="task">
-                <span class="task-icon">📢</span>
-                <p>¡Síguenos en Instagram!<br><span>+1 Coin</span></p>
-                <button class="task-button">Seguir</button>
-              </div>
-              <div class="task">
-                <span class="task-icon">📢</span>
-                <p>¡Sígue nuestro canal!<br><span>+1 Coin</span></p>
-                <button class="task-button">Seguir</button>
-              </div>
-              <div class="task">
-                <span class="task-icon">📢</span>
-                <p>¡Sígue nuestro canal!<br><span>+1 Coin</span></p>
-                <button class="task-button">Seguir</button>
-              </div>
-            </div>
-        </div>
+      <!-- Sección de Tareas -->
+      <div class="tasks-section">
+          <p>Completa Tareas & Gana</p>
+          <div class="task">
+            <span class="task-icon">📢</span>
+            <p>¡Sígue nuestro canal!<br><span>+1 Coin</span></p>
+            <button class="task-button">Seguir</button>
+          </div>
+          <div class="task">
+            <span class="task-icon">📢</span>
+            <p>¡Síguenos en Instagram!<br><span>+1 Coin</span></p>
+            <button class="task-button">Seguir</button>
+          </div>
+          <div class="task">
+            <span class="task-icon">📢</span>
+            <p>¡Sígue nuestro canal!<br><span>+1 Coin</span></p>
+            <button class="task-button">Seguir</button>
+          </div>
+          <div class="task">
+            <span class="task-icon">📢</span>
+            <p>¡Síguenos en Instagram!<br><span>+1 Coin</span></p>
+            <button class="task-button">Seguir</button>
+          </div>
+          <div class="task">
+            <span class="task-icon">📢</span>
+            <p>¡Sígue nuestro canal!<br><span>+1 Coin</span></p>
+            <button class="task-button">Seguir</button>
+          </div>
+      </div>
     </div>
   </div>
 
@@ -63,24 +62,6 @@
   <div id="desktop-warning">
       <h1>Esta página solo está disponible en dispositivos móviles</h1>
       <p>Por favor, visita esta página desde tu teléfono móvil.</p>
-  </div>
-
-  <!-- Sección de Tareas -->
-  <div id="tareas-section" class="section" style="display: none;">
-    <h1>Tareas</h1>
-    <p>Aquí puedes completar tareas para ganar recompensas adicionales.</p>
-    
-    <div class="task">
-        <span class="task-icon">📢</span>
-        <p>Completa una encuesta<br><span>+5 Coins</span></p>
-        <button class="task-button">Completar</button>
-    </div>
-
-    <div class="task">
-        <span class="task-icon">📢</span>
-        <p>Comparte en redes sociales<br><span>+3 Coins</span></p>
-        <button class="task-button">Compartir</button>
-    </div>
   </div>
 
   <!-- Sección de Amigos -->
@@ -111,7 +92,7 @@
       <span class="icon">😊</span>
       <p>Inicio</p>
     </div>
-    <div class="navbar-item" onclick="showSection('tareas-section', this)">
+    <div class="navbar-item" onclick="showSection('inicio-section', this)">
       <span class="icon">📄</span>
       <p>Tareas</p>
     </div>
