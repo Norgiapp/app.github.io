@@ -2,15 +2,15 @@
 document.addEventListener('DOMContentLoaded', function() {
     if (typeof Telegram !== 'undefined' && Telegram.WebApp) {
         Telegram.WebApp.ready();
-        Telegram.WebApp.expand();
+        Telegram.WebApp.expand(); // Expande la app a pantalla completa
         
         // Cambiar la franja superior a negro y el texto a blanco
         Telegram.WebApp.setHeaderColor('bg_color'); // Cambia el color de fondo de la barra
         Telegram.WebApp.setHeaderTextColor('white'); // Cambia el color del texto de la barra
+
+        // Renderizar las tareas al cargar la página solo si Telegram está listo
+        renderTareas();
     }
-    
-    // Renderizar las tareas al cargar la página
-    renderTareas();
 });
 
 // Detectar dispositivo y ajustar la visibilidad del contenido
