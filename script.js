@@ -8,6 +8,9 @@ document.addEventListener('DOMContentLoaded', function() {
         Telegram.WebApp.setHeaderColor('bg_color'); // Cambia el color de fondo de la barra
         Telegram.WebApp.setHeaderTextColor('white'); // Cambia el color del texto de la barra
     }
+    
+    // Renderizar las tareas al cargar la página
+    renderTareas();
 });
 
 // Detectar dispositivo y ajustar la visibilidad del contenido
@@ -52,4 +55,45 @@ function showSection(sectionId, element = null) {
             targetNavItem.classList.add('active');
         }
     }
+}
+
+// Array con todas las tareas
+const tareas = [
+    { icon: "📢", text: "¡Sígue nuestro canal!", reward: "+1 Coin" },
+    { icon: "📢", text: "¡Síguenos en Instagram!", reward: "+1 Coin" },
+    { icon: "📢", text: "¡Comparte en Twitter!", reward: "+1 Coin" },
+    { icon: "📢", text: "¡Invita a un amigo!", reward: "+2 Coins" },
+    { icon: "📢", text: "¡Completa una encuesta!", reward: "+3 Coins" },
+    // Añade más tareas aquí según sea necesario
+];
+
+// Función para renderizar las tareas
+function renderTareas() {
+    const inicioTasksContainer = document.getElementById("inicio-tasks-list");
+    const tareasContainer = document.getElementById("tareas-list");
+
+    inicioTasksContainer.innerHTML = "";
+    tareasContainer.innerHTML = "";
+
+    // Mostrar solo las primeras 5 tareas en "Inicio"
+    tareas.slice(0, 5).forEach(task => {
+        inicioTasksContainer.innerHTML += `
+            <div class="task">
+                <span class="task-icon">${task.icon}</span>
+                <p>${task.text}<br><span>${task.reward}</span></p>
+                <button class="task-button">Seguir</button>
+            </div>
+        `;
+    });
+
+    // Mostrar todas las tareas en la sección de "Tareas"
+    tareas.forEach(task => {
+        tareasContainer.innerHTML += `
+            <div class="task">
+                <span class="task-icon">${task.icon}</span>
+                <p>${task.text}<br><span>${task.reward}</span></p>
+                <button class="task-button">Seguir</button>
+            </div>
+        `;
+    });
 }
