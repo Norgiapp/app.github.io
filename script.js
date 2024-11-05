@@ -3,8 +3,13 @@ document.addEventListener('DOMContentLoaded', function() {
     if (typeof Telegram !== 'undefined' && Telegram.WebApp) {
         Telegram.WebApp.ready();
         Telegram.WebApp.expand();
+        
+        // Cambiar la franja superior a negro y el texto a blanco
+        Telegram.WebApp.setHeaderColor('bg_color'); // Cambia el color de fondo de la barra
+        Telegram.WebApp.setHeaderTextColor('white'); // Cambia el color del texto de la barra
     }
 });
+
 // Detectar dispositivo y ajustar la visibilidad del contenido
 window.addEventListener('load', function () {  
     if (window.matchMedia("(min-width: 768px)").matches || !/Android|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i.test(navigator.userAgent)) {
